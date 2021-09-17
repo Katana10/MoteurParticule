@@ -4,23 +4,29 @@
 #include <iostream>
 #include "Vecteur3D.h"
 
+#define GRAVITE 10
+#define FRAME 30
+
+
 class Particule {
 public:
-  Particule(double masse, int velocite);
+  Particule(float masse, float dumping, Vecteur3D position);
   ~Particule();
 
-  void integrer(float temps);
+  void integrer();
 
-  double getInverseMasse() const {return inverseMasse;}
+  float getInverseMasse() const {return inverseMasse;}
   void setInverseMasse(double inverseMasse) {this->inverseMasse = inverseMasse;}
 
 protected:
-  double inverseMasse;
+  float inverseMasse;
 
 private:
-  double masse;
-  int velocite;
-  float temps;
+  float masse;
+  float dumping;
+  Vecteur3D velocite;
+  Vecteur3D position;
+
 
 };
 #endif

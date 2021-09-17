@@ -9,6 +9,7 @@
 
 class Vecteur3D {
 public:
+	Vecteur3D(){}
 	// Constructeur � 1 argument
 	Vecteur3D(float x, float y, float z);
 	// Destructeur
@@ -20,7 +21,10 @@ public:
   float squareNorme(Vecteur3D u);
   static Vecteur3D normalisation(Vecteur3D u);
 
-  void mult_scalaire(int k, Vecteur3D u);
+	void mult_scalaire(float k);
+  static Vecteur3D mult_scalaire(float k, Vecteur3D u);
+
+
   void addition(Vecteur3D u);
   void soustraction(Vecteur3D u);
 
